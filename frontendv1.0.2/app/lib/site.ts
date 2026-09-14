@@ -15,19 +15,31 @@ export function getSiteUrl() {
 }
 
 export const siteConfig = {
-  name: "Denis Jamil",
-  title: "Denis Jamil | Backend Developer",
+  name: "Denis Jamil Tineo Huancas",
+  title: "Denis Jamil Tineo Huancas | Backend Developer Java & Spring Boot",
   description:
-    "Portafolio de Denis Jamil, desarrollador backend y estudiante de Ingenieria de Sistemas. Conoce sus proyectos, habilidades y experiencia.",
+    "Portafolio de Denis Jamil Tineo Huancas, desarrollador backend y estudiante de Ingeniería de Sistemas enfocado en Java, Spring Boot, APIs REST y PostgreSQL.",
   email: "denistineohuancas@gmail.com",
   github: "https://github.com/djamth",
-  linkedin: "https://www.linkedin.com/in/denistineo",
+  linkedin: "https://www.linkedin.com/in/denis-jamil-tineo-huancas",
 
   seo: {
-    titleTemplate: "%s | Denis Jamil",              
-    defaultTitle: "Denis Jamil | Backend Developer",
-    defaultDescription: "Portafolio de Denis Jamil...",
-    keywords: ["backend", "developer", "sistemas", "portafolio","portafolio","Denis Jamil","desarrollador backend","proyectos","habilidades","experiencia"], 
+    titleTemplate: "%s | Denis Jamil Tineo Huancas",
+    defaultTitle: "Denis Jamil Tineo Huancas | Backend Developer Java & Spring Boot",
+    defaultDescription:
+      "Portafolio de Denis Jamil Tineo Huancas, desarrollador backend especializado en Java, Spring Boot, APIs REST y PostgreSQL.",
+    keywords: [
+      "Denis Jamil Tineo Huancas",
+      "Denis Jamil",
+      "desarrollador backend",
+      "backend developer",
+      "Java",
+      "Spring Boot",
+      "APIs REST",
+      "PostgreSQL",
+      "Ingeniería de Sistemas",
+      "portafolio desarrollador",
+    ],
     author: "Denis Jamil Tineo Huancas",
     robots: {
       index: true,
@@ -36,16 +48,15 @@ export const siteConfig = {
   },
 
   og: {
-    title: "Denis Jamil | Backend Developer",
-    description: "Portafolio de Denis Jamil, desarrollador backend y estudiante de Ingeniería de Sistemas.",
-    image: "/portafolio.png",  
+    title: "Denis Jamil Tineo Huancas | Backend Developer",
+    description:
+      "Portafolio de Denis Jamil Tineo Huancas, desarrollador backend enfocado en Java, Spring Boot, APIs REST y PostgreSQL.",
+    image: "/portafolio.png",
     type: "website",
     locale: "es_PE",
-    siteName: "Denis Jamil",
+    siteName: "Denis Jamil Tineo Huancas | Portafolio",
     imageWidth: 1200,
     imageHeight: 630,
-    imageAlt: "Portafolio de Denis Jamil - Backend Developer",
+    imageAlt: "Portafolio de Denis Jamil Tineo Huancas - Backend Developer",
   },
-
-  
 };
