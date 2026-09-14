@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   keywords: ["Denis Jamil", "backend developer", "desarrollador backend", "Java", "Spring Boot", "Next.js", "portafolio desarrollador"],
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
+  verification: {
+    google: "n9w9OXPt5UzsfLYeR41bgdIPz_A0s6i_3Gd-KusXapQ",
+  },
   alternates: {
     canonical: "/",
   },
