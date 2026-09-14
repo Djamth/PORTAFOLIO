@@ -1,31 +1,62 @@
-#
+# Portafolio — Denis Jamil Tineo Huancas
 
-Este es un portafolio web personal desarrollado utilizando Next js , Tailwind css  y JavaScript. El objetivo de este proyecto es mostrar mis habilidades y proyectos de una manera atractiva y profesional.
+Portafolio web personal de **Denis Jamil Tineo Huancas**, estudiante de Ingeniería de Sistemas enfocado en desarrollo backend con **Java, Spring Boot, APIs REST y PostgreSQL**.
+
+## Sitio web
+
+https://portafolio-five-lemon-79.vercel.app/
 
 ## Características
-- Diseño responsivo: El portafolio se adapta a diferentes tamaños de pantalla, lo que garantiza una experiencia de usuario óptima en dispositivos móviles y de escritorio.
-- Sección de proyectos: Incluye una sección dedicada a mostrar mis proyectos anteriores, con descripciones detalladas y enlaces a los repositorios de GitHub.
-- Sección de habilidades: Destaca mis habilidades técnicas y herramientas que utilizo en mis proyectos.
-- Contacto: Proporciona un formulario de contacto para que los visitantes puedan comunicarse conmigo fácilmente.
-## Tecnologías utilizadas
-tabla de tecnologías utilizadas en el proyecto
-| Tecnología | Descripción |
-|------------|-------------|
-| HTML5      | Para estructurar el contenido del portafolio. | 
-| CSS3       | Para diseñar y estilizar el portafolio, utilizando Flexbox y Grid para la disposición de los elementos. |
-| JavaScript | Para agregar interactividad y mejorar la experiencia del usuario. |
 
-## Próximamente
-- Implementacion de backend con spingboot para manejar los datos de contacto y proyectos de manera dinámica.
-- Integración de una base de datos para almacenar la información de los proyectos y habilidades.
-## Cómo usar este proyecto
-1. Clona este repositorio en tu máquina local:
+- Diseño responsivo para escritorio y dispositivos móviles.
+- Presentación profesional, habilidades técnicas, educación y proyectos destacados.
+- Enlaces directos a proyectos y perfiles profesionales.
+- Animaciones e interacciones con JavaScript.
+- SEO técnico mediante metadatos, Open Graph, canonical URL y datos estructurados Schema.org.
+- `robots.txt` y `sitemap.xml` para facilitar el rastreo e indexación por motores de búsqueda.
+
+## Tecnologías
+
+| Tecnología | Uso |
+| --- | --- |
+| HTML5 | Estructura y contenido semántico |
+| CSS3 | Diseño responsivo, estilos y animaciones |
+| JavaScript | Interactividad y comportamiento de la interfaz |
+| Vercel | Despliegue del portafolio |
+
+## Proyectos destacados
+
+### Sistema de Votación Escolar
+Sistema para gestionar elecciones estudiantiles, desarrollado con Java, Spring Boot y PostgreSQL.
+
+### Sistema de Gestión de Usuarios y Módulos
+Aplicación para administración de usuarios, roles y módulos con Java, Spring Boot, Vue.js y PostgreSQL.
+
+## SEO
+
+El sitio incluye elementos básicos de optimización para buscadores:
+
+- `title` y meta description descriptivos.
+- URL canónica.
+- Open Graph y Twitter Card.
+- Schema.org `Person` mediante JSON-LD.
+- Sitemap XML.
+- Reglas de rastreo para buscadores.
+- Contenido semántico y textos alternativos en imágenes relevantes.
+
+## Ejecución local
+
 ```bash
 git clone https://github.com/Djamth/Portafolio.git
-
+cd Portafolio
 ```
-2. Abre el archivo `index.html` en tu navegador para ver el portafolio.
-3. Personaliza el contenido con tus propios proyectos, habilidades y detalles de contacto.
-## Autor
-- Denis Jamil Tineo Huancas: Desarrollador web y creador de este portafolio.
 
+Luego abre `index.html` en el navegador o utiliza un servidor local para archivos estáticos.
+
+## Autor
+
+**Denis Jamil Tineo Huancas**  
+Backend Developer · Estudiante de Ingeniería de Sistemas
+
+- GitHub: https://github.com/Djamth
+- LinkedIn: https://www.linkedin.com/in/denistineo
