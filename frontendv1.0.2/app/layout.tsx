@@ -9,9 +9,10 @@ export const metadata: Metadata = {
   metadataBase: getSiteUrl(),
   title: siteConfig.title,
   description: siteConfig.description,
-  keywords: ["Denis Jamil", "backend developer", "desarrollador backend", "Java", "Spring Boot", "Next.js", "portafolio desarrollador"],
-  authors: [{ name: siteConfig.name }],
+  keywords: siteConfig.seo.keywords,
+  authors: [{ name: siteConfig.name, url: siteConfig.github }],
   creator: siteConfig.name,
+  publisher: siteConfig.name,
   verification: {
     google: "n9w9OXPt5UzsfLYeR41bgdIPz_A0s6i_3Gd-KusXapQ",
   },
@@ -36,6 +37,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 
@@ -45,7 +53,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es-PE">
       <body className={inter.className}>{children}</body>
     </html>
   );
