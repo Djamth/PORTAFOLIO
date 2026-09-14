@@ -1,53 +1,35 @@
-// ========== Menú Responsivo ==========
+// ========== Menú responsivo ==========
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
-const btncv = document.querySelector('#btncv');
 
-if (hamburger) {
+if (hamburger && navLinks) {
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         navLinks.classList.toggle('active');
     });
 }
-//mensaje con sweet alert al hacer clic en el botón de descargar CV
-if (btncv) {
-    btncv.addEventListener('click', () => {
-        Swal.fire({
-            title: 'Descargando CV...',
-            text: 'Gracias por tu interés.',
-            icon: 'success',
-            timer: 2000,
-            showConfirmButton: false
-        });
-    });
-}
 
-
-// Cerrar menú al hacer clic en un enlace
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
+        if (hamburger && navLinks) {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        }
     });
 });
 
-
-// ========== Formulario de Contacto ==========
+// ========== Formulario de contacto ==========
 const contactForm = document.querySelector('.contact-form');
 
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        
-        // Obtener valores del formulario
         const name = contactForm.querySelector('input[type="text"]').value.trim();
         const email = contactForm.querySelector('input[type="email"]').value.trim();
         const message = contactForm.querySelector('textarea').value.trim();
-        
-     //mensaje con sweet alert
+
         if (name && email && message) {
-           
-            Swal.fire('¡Mensaje enviado! Pronto te contactaremos.');
+            Swal.fire('¡Mensaje registrado!', 'Gracias por tu interés.', 'success');
             contactForm.reset();
         } else {
             Swal.fire('Por favor completa todos los campos.');
@@ -55,12 +37,8 @@ if (contactForm) {
     });
 }
 
-// ========== Animación de Scroll ==========
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
+// ========== Animación de scroll ==========
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -70,55 +48,33 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observar elementos con clase de animación
 document.querySelectorAll('.skill-card, .project-card, .timeline-item, .stat-box').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     observer.observe(el);
 });
 
-// ========== Efecto de Scroll en Navegación ==========
+// ========== Navegación y scroll ==========
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.2)';
-    } else {
-        navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
-    }
+    if (navbar) navbar.style.boxShadow = window.scrollY > 50 ? '0 10px 30px rgba(0, 0, 0, 0.2)' : '0 10px 30px rgba(0, 0, 0, 0.1)';
+
+    let current = '';
+    document.querySelectorAll('section').forEach(section => {
+        if (window.scrollY >= section.offsetTop - 200) current = section.getAttribute('id');
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href').slice(1) === current);
+    });
 });
 
-// ========== Smooth Scroll for Navigation Links ==========
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
-        if (href !== '#' && document.querySelector(href)) {
+        const target = href !== '#' ? document.querySelector(href) : null;
+        if (target) {
             e.preventDefault();
-            document.querySelector(href).scrollIntoView({
-                behavior: 'smooth'
-            });
+            target.scrollIntoView({ behavior: 'smooth' });
         }
     });
 });
-
-
-
-// ========== Agregar clase activa a navegación según scroll ==========
-window.addEventListener('scroll', () => {
-    let current = '';
-    
-    document.querySelectorAll('section').forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
-    });
-    
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').slice(1) === current) {
-            link.classList.add('active');
-        }
-    });
-});
-
