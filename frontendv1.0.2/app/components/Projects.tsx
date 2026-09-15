@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Icon from "./Icon";
 import { certificates, projects } from "../lib/portfolio";
 
@@ -14,21 +15,30 @@ export default function Projects() {
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {projects.map((project) => (
-            <article key={project.id ?? project.nombre} className="soft-shadow group overflow-hidden rounded-2xl border border-[#e8ebf4] bg-white">
-              <div className="relative h-56 overflow-hidden bg-[#eeebff]">
-                <Image src={project.imagenes?.[0] || projects[0].imagenes[0]} alt={project.nombre} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover transition duration-500 group-hover:scale-105" />
-              </div>
+            <article key={project.slug} className="soft-shadow group overflow-hidden rounded-2xl border border-[#e8ebf4] bg-white">
+              <Link href={`/proyectos/${project.slug}`} className="block">
+                <div className="relative h-56 overflow-hidden bg-[#eeebff]">
+                  <Image src={project.imagenes[0]} alt={`Vista previa de ${project.nombre}`} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover transition duration-500 group-hover:scale-105" />
+                </div>
+              </Link>
               <div className="p-6">
-                <h3 className="text-xl font-black text-[#171a2d]">{project.nombre}</h3>
+                <h3 className="text-xl font-black text-[#171a2d]">
+                  <Link href={`/proyectos/${project.slug}`} className="transition hover:text-[#6335f5]">{project.nombre}</Link>
+                </h3>
                 <p className="mt-3 text-sm leading-6 text-[#73788f]">{project.descripcion}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  {project.tecnologiasutilizadas?.map((tech) => (
+                  {project.tecnologiasutilizadas.map((tech) => (
                     <span key={tech} className="rounded-full bg-[#f0ecff] px-3 py-1 text-[11px] font-bold text-[#6335f5]">{tech}</span>
                   ))}
                 </div>
-                <a href={project.url} target="_blank" className="mt-5 inline-flex items-center gap-2 text-sm font-black text-[#6335f5]">
-                  Ver proyecto <Icon name="external" className="size-4" />
-                </a>
+                <div className="mt-5 flex flex-wrap items-center gap-5">
+                  <Link href={`/proyectos/${project.slug}`} className="inline-flex items-center gap-2 text-sm font-black text-[#6335f5]">
+                    Ver detalles <span aria-hidden="true">→</span>
+                  </Link>
+                  <a href={project.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-bold text-[#555b73] transition hover:text-[#6335f5]">
+                    GitHub <Icon name="external" className="size-4" />
+                  </a>
+                </div>
               </div>
             </article>
           ))}
@@ -41,7 +51,7 @@ export default function Projects() {
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             {certificates.map((certificate) => (
-              <a key={certificate.id ?? certificate.nombre} href={certificate.url} target="_blank" className="rounded-2xl border border-[#e8ebf4] bg-white p-5 transition hover:-translate-y-1 hover:border-[#cbbcff] hover:shadow-[0_14px_26px_rgba(98,53,245,0.1)]">
+              <a key={certificate.id ?? certificate.nombre} href={certificate.url} target="_blank" rel="noopener noreferrer" className="rounded-2xl border border-[#e8ebf4] bg-white p-5 transition hover:-translate-y-1 hover:border-[#cbbcff] hover:shadow-[0_14px_26px_rgba(98,53,245,0.1)]">
                 <div className="flex gap-4">
                   <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-[#f0ebff] text-[#6335f5]"><Icon name="graduation" /></span>
                   <span>
